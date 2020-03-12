@@ -647,7 +647,17 @@ tag:
 
 ## 关于页
 
-### 创建关于页
+### 编辑关于内容
+
+只需编辑 `fluid/pages/about.md`，再次 `hexo g` 时会自动渲染。
+
+`about.md` 可以在**主题配置**中修改位置，建议修改到 fluid 目录之外，避免更新主题时丢失内容，比如：
+
+```yaml
+about:
+  md_path: ../../source/_data/fluid_about.md  # 实际位置： blog/source/_data/fluid_about.md
+```
+#### 创建「关于页」
 
 自 v1.7.0 开始，「关于页」需要手动创建：
 
@@ -655,20 +665,29 @@ tag:
 $ hexo new page about
 ```
 
-创建成功后修改 `/source/about/index.md`，添加 `layout` 属性。
+创建成功后，编辑博客目录下 `/source/about/index.md`，添加 `layout` 属性。
 
 修改后的文件示例如下：
 
-```yaml
----
+```yml
 title: about
 date: 2020-02-23 19:20:33
 layout: about
 ---
 
-# 这里可以写正文
-支持 Markdown, HTML
+这里写正文，支持 Markdown, HTML
 ```
+
+如果原先是自写about页面，把.md文件放到 /source/about/index.md中(index.md需要自己创建)
+```yml
+title: about
+date: 2020-02-23 19:20:33
+layout: about # 需要加上layout:about
+---
+
+这里写正文，支持 Markdown, HTML
+```
+
 
 ### 社交页图标
 
